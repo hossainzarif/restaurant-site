@@ -1,11 +1,16 @@
-import React from 'react';
+import React from 'react'
 
-import './Header.css';
-
+import './Header.css'
+import SubHeading from '../../components/SubHeading/SubHeading'
+import { images } from '../../constants'
 const Header = () => (
-  <div>
-    Header
-  </div>
-);
+  <div className='app__header app__wrapper section__padding' id='home'>
+    <div className='app__wrapper_info'>
+      <SubHeading />
+    </div>
 
-export default Header;
+    <div className='app__wrapper_img'></div>
+  </div>
+)
+
+export default Header

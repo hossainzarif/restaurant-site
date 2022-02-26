@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react'
 
 const SubHeading = () => (
-  <div>
-    SubHeading
+  <div style={{ marginBottom: '1rem' }}>
+    <p className='p__cormorant'>TITLE</p>
   </div>
-);
+)
 
-export default SubHeading;
+export default SubHeading
