@@ -49,3 +49,53 @@
   font-size: 1.1rem;
   transition: 0.5s ease;
 }
+.app__navbar-smallscreen {
+  display: none;
+}
+.app__navbar-smallscreen_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: var(--color-black);
+  transition: 0.5s ease;
+  flex-direction: column;
+  z-index: 5;
+}
+.app__navbar-smallscreen_overlay .overlay__close {
+  font-size: 27px;
+  color: var(--color-golden);
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+.app__menu {
+  cursor: pointer;
+}
+.app__navbar-smallscreen_links {
+  list-style: none;
+}
+.app__navbar-smallscreen_links li {
+  margin: 2rem;
+  cursor: pointer;
+  color: var(--color-golden);
+  text-align: center;
+  font-size: 2rem;
+  font-family: var(--font-base);
+}
+.app__navbar-smallscreen_links li:hover {
+  color: var(--color-white);
+  font-size: 2.2rem;
+  transition: 0.8s ease;
+}
+
+@media screen and (max-width: 1150px) {
+  .app__navbar-links {
+    display: none;
+  }
+  .app__navbar-smallscreen {
+    display: flex;
+  }
+}
