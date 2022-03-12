@@ -5,10 +5,11 @@ import { BsFillPlayFill, BsPauseFill } from 'react-icons/bs'
 import './Intro.css'
 
 const Intro = () => {
-  const vidRef = useRef(null)
+  const vidRef = useRef()
   const [play, setPlay] = useState(false)
+
   const handleVideoPlayer = () => {
-    setPlay((prevPlayVideo) => !prevPlayVideo)
+    setPlay((prevPlay) => !prevPlay)
 
     if (play) {
       vidRef.current.pause()
@@ -18,9 +19,22 @@ const Intro = () => {
   }
   return (
     <div className='app__video'>
-      <video src={meal} type='video/mp4' loop controls={false} muted />
+      <video
+        ref={vidRef}
+        src={meal}
+        type='video/mp4'
+        loop
+        controls={false}
+        muted
+      />
 
-      <div className='app__-overlay flex__center'>
+      <div
+        className={
+          play
+            ? 'app__video-overlay_pause flex__center'
+            : 'app__video-overlay_play flex__center'
+        }
+      >
         <div
           className='app__video-overlay_circle flex__center'
           onClick={handleVideoPlayer}
