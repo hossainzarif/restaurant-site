@@ -7,26 +7,26 @@ import './Intro.css'
 const Intro = () => {
   const vidRef = useRef()
   const [play, setPlay] = useState(true)
+  const [constantPause, setConstantPause] = useState(false)
+
   useEffect(() => {
     let options = {
       rootMargin: '0px',
-      threshold: [0.25, 0.75],
     }
 
     let handlePlay = (entries, observer) => {
-      entries.forEach((entry) => {
-        if (play) {
+      if (!constantPause) {
+        console.log(constantPause)
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setPlay(true)
-
             vidRef.current.play()
           } else {
             setPlay(false)
-
             vidRef.current.pause()
           }
-        }
-      })
+        })
+      }
     }
 
     let observer = new IntersectionObserver(handlePlay, options)
@@ -36,8 +36,10 @@ const Intro = () => {
 
   const handleVideoPlayer = () => {
     setPlay((prevPlay) => !prevPlay)
+    // setConstantPause((prevPause) => !prevPause)
 
     if (play) {
+      setConstantPause(true)
       vidRef.current.pause()
     } else {
       vidRef.current.play()
