@@ -22,9 +22,10 @@ const Gallery = () => {
   const scroll = (direct) => {
     const { current } = scrollRef
     if (direct === 'left') {
+      console.log('ff')
       current.scrollLeft -= 300
     } else {
-      current.scrollRight += 300
+      current.scrollLeft += 300
     }
   }
 
@@ -53,13 +54,16 @@ const Gallery = () => {
             </div>
           ))}
         </div>
-      </div>
-      <div className='app__gallery-images_arrows'>
-        <BsArrowLeftShort
-          className='gallery__arrow-icon'
-          onClick={() => scroll('left')}
-        />
-        <BsArrowRightShort className='gallery__arrow-icon' />
+        <div className='app__gallery-images_arrows'>
+          <BsArrowLeftShort
+            className='gallery__arrow-icon'
+            onClick={() => scroll('left')}
+          />
+          <BsArrowRightShort
+            className='gallery__arrow-icon'
+            onClick={() => scroll('right')}
+          />
+        </div>
       </div>
     </div>
   )
