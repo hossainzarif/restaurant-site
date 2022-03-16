@@ -10,6 +10,13 @@ import {
   BsArrowRightShort,
 } from 'react-icons/bs'
 
+const allimage = [
+  images.gallery01,
+  images.gallery02,
+  images.gallery03,
+  images.gallery04,
+]
+
 const Gallery = () => {
   const scrollRef = React.useRef(null)
   const scroll = (direct) => {
@@ -35,7 +42,17 @@ const Gallery = () => {
       </div>
 
       <div className='app__gallery-images'>
-        <div className='app__gallery-images_container' ref={scrollRef}></div>
+        <div className='app__gallery-images_container' ref={scrollRef}>
+          {allimage.map((image, index) => (
+            <div
+              className='app__gallery-images_card flex__center'
+              key={index + 1}
+            >
+              <img src={image} alt='gallery image' />
+              <BsInstagram className='gallery__image-icon' />
+            </div>
+          ))}
+        </div>
       </div>
       <div className='app__gallery-images_arrows'>
         <BsArrowLeftShort
