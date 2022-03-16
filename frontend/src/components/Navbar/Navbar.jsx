@@ -9,7 +9,9 @@ const Navbar = () => {
   return (
     <nav className='app__navbar'>
       <div className='app__navbar-logo'>
-        <img src={images.gericht} alt='app__logo' />
+        <a href='#home' onClick={() => setToggleMenu(false)}>
+          <img src={images.gericht} alt='app__logo' />
+        </a>
       </div>
       <ul className='app__navbar-links'>
         <li className='p__opensans'>
