@@ -11,10 +11,13 @@ import {
 } from 'react-icons/bs'
 
 const allimage = [
+  images.gallery07,
   images.gallery01,
   images.gallery02,
   images.gallery03,
   images.gallery04,
+  images.gallery05,
+  images.gallery06,
 ]
 
 const Gallery = () => {
